@@ -1,11 +1,12 @@
 import React from 'react';
 import parse from 'html-react-parser';
+import { EPISODES_PARENT_DIV, EPISODE_DIV } from "../testIds";
 
 export default function Episodes(props) {
   return (
-    <div className="episodes">
+    <div className="episodes" data-testid={EPISODES_PARENT_DIV}>
       {props.episodes.map(e => (
-        <div className="episode" key={e.id}>
+        <div className="episode" key={e.id} data-testid={EPISODE_DIV}>
           {e.image && (
             <img className="episode-image" src={e.image.medium} alt={e.name} />
           )}
